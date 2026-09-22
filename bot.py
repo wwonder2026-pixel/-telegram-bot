@@ -120,8 +120,7 @@ async def test_channel(update: Update, context: ContextTypes.DEFAULT_TYPE):
         text=WELCOME,
         reply_markup=welcome_keyboard()
     )
-    
-    def main():
+def main():
     app = Application.builder().token(TOKEN).build()
 
     app.add_handler(CommandHandler("start", start))
