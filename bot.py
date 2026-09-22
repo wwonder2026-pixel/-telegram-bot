@@ -115,11 +115,17 @@ In Arrivo ⏳
 async def channel_post(update: Update, context: ContextTypes.DEFAULT_TYPE):
     print(f"🆔 CHANNEL ID: {update.effective_chat.id}")
 
+async def test_channel(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    await context.bot.send_message(
+        chat_id=CHANNEL_ID,
+        text="🤖 TEST BOT"
+    )
 def main():
     app = Application.builder().token(TOKEN).build()
 
     app.add_handler(CommandHandler("start", start))
     app.add_handler(CallbackQueryHandler(buttons))
+    app.add_handler(CommandHandler("test", test_channel))
     app.add_handler(MessageHandler(filters.UpdateType.CHANNEL_POST, channel_post))
     app.run_polling()
 
