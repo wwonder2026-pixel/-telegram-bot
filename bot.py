@@ -117,9 +117,11 @@ async def channel_post(update: Update, context: ContextTypes.DEFAULT_TYPE):
 async def test_channel(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await context.bot.send_message(
         chat_id=CHANNEL_ID,
-        text="🤖 TEST BOT"
+        text=WELCOME,
+        reply_markup=welcome_keyboard()
     )
-def main():
+    
+    def main():
     app = Application.builder().token(TOKEN).build()
 
     app.add_handler(CommandHandler("start", start))
