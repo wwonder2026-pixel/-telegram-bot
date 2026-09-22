@@ -111,15 +111,13 @@ In Arrivo ⏳
             reply_markup=back_keyboard()
         )
         
-async def channel_post(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    print(f"🆔 CHANNEL ID: {update.effective_chat.id}")
+
 
 def main():
     app = Application.builder().token(TOKEN).build()
 
     app.add_handler(CommandHandler("start", start))
     app.add_handler(CallbackQueryHandler(buttons))
-    app.add_handler(MessageHandler(filters.UpdateType.CHANNEL_POST, channel_post))
     app.run_polling()
 
 
