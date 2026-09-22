@@ -111,7 +111,8 @@ In Arrivo ⏳
             reply_markup=back_keyboard()
         )
  
-
+async def channel_post(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    print(f"🆔 CHANNEL ID: {update.effective_chat.id}")
 
 def main():
     app = Application.builder().token(TOKEN).build()
