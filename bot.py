@@ -12,6 +12,7 @@ from telegram.ext import (
 )
 
 TOKEN = os.environ["BOT_TOKEN"]
+CHANNEL_ID = -1004489332285
 CHANNEL_ID = int(os.environ["CHANNEL_ID"])
 WELCOME = """☀️ BUONGIORNO FAMILY! ❤️
 
