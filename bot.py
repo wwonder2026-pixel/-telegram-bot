@@ -110,7 +110,11 @@ In Arrivo ⏳
 ⏳⏳⏳""",
             reply_markup=back_keyboard()
         )
-        
+  async def test_channel(context: ContextTypes.DEFAULT_TYPE):
+    await context.bot.send_message(
+        chat_id=CHANNEL_ID,
+        text="🤖 TEST BOT"
+    )      
 
 
 def main():
@@ -118,6 +122,7 @@ def main():
 
     app.add_handler(CommandHandler("start", start))
     app.add_handler(CallbackQueryHandler(buttons))
+    app.add_handler(CommandHandler("testchannel", test_channel))
     app.run_polling()
 
 
